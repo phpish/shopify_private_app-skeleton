@@ -11,7 +11,7 @@
 
 	try
 	{
-		# Making an API request can throw an exception
+		// Making an API request can throw an exception
 		$product = $shopify('POST /admin/products.json', array(), array
 		(
 			'product' => array
@@ -41,17 +41,17 @@
 	}
 	catch (shopify\ApiException $e)
 	{
-		# HTTP status code was >= 400 or response contained the key 'errors'
+		// HTTP status code was >= 400 or response contained the key 'errors'
 		echo $e;
-		print_R($e->getRequest());
-		print_R($e->getResponse());
+		print_r($e->getRequest());
+		print_r($e->getResponse());
 	}
 	catch (shopify\CurlException $e)
 	{
-		# cURL error
+		// cURL error
 		echo $e;
-		print_R($e->getRequest());
-		print_R($e->getResponse());
+		print_r($e->getRequest());
+		print_r($e->getResponse());
 	}
 
 ?>
